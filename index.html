@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Daily Report</title>
+  <meta name="description" content="每日 AI 新闻日报，由 Hermes Agent 自动生成">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #18181B;
+      --color-on-primary: #FFFFFF;
+      --color-secondary: #3F3F46;
+      --color-accent: #EC4899;
+      --color-accent-light: #FDF2F8;
+      --color-background: #FAFAFA;
+      --color-foreground: #09090B;
+      --color-muted: #E8ECF0;
+      --color-border: #E4E4E7;
+      --color-card: #FFFFFF;
+      --color-card-hover: #F4F4F5;
+      --font-heading: 'Newsreader', Georgia, serif;
+      --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --max-width: 720px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-primary: #FAFAFA;
+        --color-on-primary: #18181B;
+        --color-secondary: #A1A1AA;
+        --color-accent: #F472B6;
+        --color-accent-light: #4C0519;
+        --color-background: #09090B;
+        --color-foreground: #FAFAFA;
+        --color-muted: #27272A;
+        --color-border: #3F3F46;
+        --color-card: #18181B;
+        --color-card-hover: #27272A;
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-background);
+      color: var(--color-foreground);
+      line-height: 1.7;
+      min-height: 100dvh;
+    }
+
+    /* --- Header --- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-background);
+      border-bottom: 1px solid var(--color-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--color-foreground);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--color-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .header-date {
+      font-size: 13px;
+      color: var(--color-secondary);
+      font-weight: 400;
+    }
+
+    /* --- Main --- */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* --- Day Card --- */
+    .day-card {
+      margin-bottom: 40px;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--color-foreground);
+    }
+
+    .day-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--color-foreground);
+    }
+
+    .day-date {
+      font-size: 14px;
+      color: var(--color-secondary);
+      white-space: nowrap;
+    }
+
+    /* --- Section --- */
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 18px;
+      background: var(--color-accent);
+      border-radius: 2px;
+    }
+
+    /* --- News Item --- */
+    .news-item {
+      display: block;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: var(--color-foreground);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .news-item:hover {
+      background: var(--color-card-hover);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .news-item:active {
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .news-item { transition: none; }
+    }
+
+    .news-title {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--color-foreground);
+      margin-bottom: 6px;
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--color-secondary);
+    }
+
+    .news-source {
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .news-arrow {
+      margin-left: auto;
+      color: var(--color-secondary);
+      font-size: 16px;
+      transition: transform 0.15s;
+    }
+
+    .news-item:hover .news-arrow {
+      transform: translateX(3px);
+    }
+
+    /* --- Footer --- */
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: var(--color-secondary);
+    }
+
+    .footer-text a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Empty state --- */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .empty-state h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .empty-state p {
+      color: var(--color-secondary);
+      font-size: 15px;
+    }
+
+    /* --- Loading --- */
+    .loading {
+      display: flex;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .loading-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      margin: 0 4px;
+      animation: bounce 1.2s infinite;
+    }
+
+    .loading-dot:nth-child(2) { animation-delay: 0.15s; }
+    .loading-dot:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .loading-dot { animation: none; opacity: 0.6; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">AI</div>
+        <span class="logo-text">Daily Report</span>
+      </a>
+      <span class="header-date" id="headerDate"></span>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="loading">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-text">
+      Powered by <a href="https://github.com/outhsics">Hermes Agent</a> · 
+      <a href="https://github.com/outhsics/daily-report">GitHub</a> · 
+      Auto-generated daily
+    </p>
+  </footer>
+
+  <script>
+    // Set header date
+    const now = new Date();
+    const opts = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' };
+    document.getElementById('headerDate').textContent = now.toLocaleDateString('zh-CN', opts);
+
+    // News data - injected by build script
+    const REPORTS = [{"title": "AI 日报", "date": "2026年05月22日 2026-05-22 18:24", "sections": [{"name": "AI 新闻", "items": [{"title": "从感知环境到改变世界：物理AI的机遇、路径与实践| 2026AI Partner·北京亦庄AI+产业大会", "link": "https://36kr.com/p/3820298219425924?f=rss", "source": "36kr AI"}, {"title": "小米YU7家族再推新车，雷军：标准版打特斯拉，GT版狙BBA", "link": "https://36kr.com/p/3817022407181188?f=rss", "source": "36kr AI"}, {"title": "让好项目，更早被看见", "link": "https://36kr.com/p/3820226045104257?f=rss", "source": "36kr AI"}, {"title": "能落地的请留下，讲故事的请离场", "link": "https://36kr.com/p/3820169156890759?f=rss", "source": "36kr AI"}, {"title": "圆桌对话：看见实效：从技术到处方，AI +医疗的场景落地与价值闭环| 2026AI Partner·北京亦庄AI+产业大会", "link": "https://36kr.com/p/3820150778531972?f=rss", "source": "36kr AI"}, {"title": "算力浪潮下，AI智能影像的无线化变革| 2026AI Partner·北京亦庄AI+产业大会", "link": "https://36kr.com/p/3818843802665862?f=rss", "source": "36kr AI"}, {"title": "AI+数字资产：激活企业沉睡数据，释放商业价值| 2026AI Partner·北京亦庄AI+产业大会", "link": "https://36kr.com/p/3820136301728135?f=rss", "source": "36kr AI"}, {"title": "圆桌对话：降本增效 风控提智：数字员工驱动金融数智化转型的实战样本| 2026AI Partner·北京亦庄AI+产业大会", "link": "https://36kr.com/p/3820121808540034?f=rss", "source": "36kr AI"}]}, {"name": "Tech 新闻", "items": [{"title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes", "link": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/", "source": "TechCrunch AI"}]}]}];
+
+    function renderReports(reports) {
+      const app = document.getElementById('app');
+      
+      if (!reports || reports.length === 0) {
+        app.innerHTML = `
+          <div class="empty-state">
+            <h2>还没有日报</h2>
+            <p>每天早上 8:00 自动更新，敬请期待。</p>
+          </div>`;
+        return;
+      }
+
+      app.innerHTML = reports.map(report => `
+        <article class="day-card">
+          <div class="day-header">
+            <h2 class="day-title">${report.title}</h2>
+            <span class="day-date">${report.date}</span>
+          </div>
+          ${report.sections.map(section => `
+            <div class="section">
+              <h3 class="section-title">${section.name}</h3>
+              ${section.items.map(item => `
+                <a href="${item.link}" target="_blank" rel="noopener" class="news-item">
+                  <div class="news-title">${item.title}</div>
+                  <div class="news-meta">
+                    <span class="news-source">${item.source}</span>
+                    <span class="news-arrow">→</span>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          `).join('')}
+        </article>
+      `).join('');
+    }
+
+    renderReports(REPORTS);
+  </script>
+</body>
+</html>
