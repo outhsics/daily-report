@@ -1,6 +1,32 @@
 [
   {
     "title": "AI 日报",
+    "date": "2026年05月22日 2026-05-22 18:34",
+    "sections": [
+      {
+        "name": "Hacker News 新闻",
+        "items": [
+          {
+            "title": "FSFE intervenes against Apple before EUCJ for the second time",
+            "link": "https://fsfe.org/news/2026/news-20260519-01.en.html",
+            "source": "Hacker News"
+          }
+        ]
+      },
+      {
+        "name": "Tech 新闻",
+        "items": [
+          {
+            "title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
+            "link": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+            "source": "TechCrunch AI"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "AI 日报",
     "date": "2026年05月22日 2026-05-22 18:24",
     "sections": [
       {
