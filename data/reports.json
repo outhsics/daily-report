@@ -1,5 +1,226 @@
 [
   {
+    "title": "TechPulse",
+    "date": "2026年05月22日",
+    "sections": [
+      {
+        "name": "Hacker News",
+        "items": [
+          {
+            "title": "FSFE intervenes against Apple before EUCJ for the second time",
+            "link": "https://fsfe.org/news/2026/news-20260519-01.en.html",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Steve Wozniak cheered after telling students they have AI – actual intelligence",
+            "link": "https://www.businessinsider.com/steve-wozniak-apple-ai-graduation-speech-2026-5",
+            "source": "Hacker News"
+          },
+          {
+            "title": "CODA: Rewriting Transformer Blocks as GEMM-Epilogue Programs",
+            "link": "https://arxiv.org/abs/2605.19269",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Slumber a TUI HTTP Client",
+            "link": "https://slumber.lucaspickering.me",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Cleve Moler has died",
+            "link": "https://www.mathworks.com/company/aboutus/founders/clevemoler.html",
+            "source": "Hacker News"
+          },
+          {
+            "title": "The memory shortage is causing a repricing of consumer electronics",
+            "link": "https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Uv is fantastic, but its package management UX is a mess",
+            "link": "https://www.loopwerk.io/articles/2026/uv-ux-mess/",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Multi-Stream LLMs: new paper on parallelizing/separating prompts, thinking, I/O",
+            "link": "https://arxiv.org/abs/2605.12460",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Using Kagi Search with Low Vision",
+            "link": "https://veroniiiica.com/using-kagi-search-with-low-vision/",
+            "source": "Hacker News"
+          },
+          {
+            "title": "Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD",
+            "link": "https://crocidb.com/post/this-blog-ran-on-ubuntu-16-04-for-10-years-i-migrated-it-to-freebsd/",
+            "source": "Hacker News"
+          }
+        ]
+      },
+      {
+        "name": "Reddit",
+        "items": [
+          {
+            "title": "Looking for feedback on AI content in r/programming and the April no-AI trial",
+            "link": "https://www.reddit.com/r/programming/comments/1t4odyl/looking_for_feedback_on_ai_content_in/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "How to Call an API from an Email",
+            "link": "https://www.reddit.com/r/programming/comments/1tjznwf/how_to_call_an_api_from_an_email/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "NVCF Is Now Open Source: Inside NVIDIA's GPU Function Platform",
+            "link": "https://www.reddit.com/r/programming/comments/1tkdn9i/nvcf_is_now_open_source_inside_nvidias_gpu/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "How many branches can your CPU predict? – Daniel Lemire's blog",
+            "link": "https://www.reddit.com/r/programming/comments/1tk03pj/how_many_branches_can_your_cpu_predict_daniel/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "We replaced Redis with MySQL for inventory reservations — and it scaled",
+            "link": "https://www.reddit.com/r/programming/comments/1tji4b9/we_replaced_redis_with_mysql_for_inventory/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "Technical Interviews Reject the Wrong Engineers",
+            "link": "https://www.reddit.com/r/programming/comments/1tjh9p9/technical_interviews_reject_the_wrong_engineers/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "Staged publishing for npm packages | npm Docs",
+            "link": "https://www.reddit.com/r/programming/comments/1tk9iww/staged_publishing_for_npm_packages_npm_docs/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "mass github repo backdooring via CI workflows(Megalodon)",
+            "link": "https://www.reddit.com/r/programming/comments/1tjro3p/mass_github_repo_backdooring_via_ci/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "A performance regression in code I didn’t touch: debugging an L1 i-cache associativity issue",
+            "link": "https://www.reddit.com/r/programming/comments/1tjk7x6/a_performance_regression_in_code_i_didnt_touch/",
+            "source": "Reddit Programming"
+          },
+          {
+            "title": "Microsoft Cancels Internal Anthropic Licenses As Shift To Token-Based AI Billing Blows Up Annual Budgets In Months",
+            "link": "https://www.reddit.com/r/artificial/comments/1tkb0op/microsoft_cancels_internal_anthropic_licenses_as/",
+            "source": "Reddit Artificial"
+          },
+          {
+            "title": "College Graduation Ceremony Erupts In Boos After 'New AI System' Allegedly Misses 'Hundreds' Of Graduates' Names",
+            "link": "https://www.reddit.com/r/artificial/comments/1tjv204/college_graduation_ceremony_erupts_in_boos_after/",
+            "source": "Reddit Artificial"
+          },
+          {
+            "title": "Interesting Response from Gemini",
+            "link": "https://www.reddit.com/r/artificial/comments/1tk3y45/interesting_response_from_gemini/",
+            "source": "Reddit Artificial"
+          },
+          {
+            "title": "Rethinking AI Bubble",
+            "link": "https://www.reddit.com/r/artificial/comments/1tkb6p9/rethinking_ai_bubble/",
+            "source": "Reddit Artificial"
+          },
+          {
+            "title": "I asked Claude how it feels about being used in battlefield. What it answered is really concerning!",
+            "link": "https://www.reddit.com/r/artificial/comments/1tkf1fj/i_asked_claude_how_it_feels_about_being_used_in/",
+            "source": "Reddit Artificial"
+          },
+          {
+            "title": "This just happened",
+            "link": "https://www.reddit.com/r/artificial/comments/1tk49oe/this_just_happened/",
+            "source": "Reddit Artificial"
+          }
+        ]
+      },
+      {
+        "name": "Tech",
+        "items": [
+          {
+            "title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
+            "link": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Six search engines worth trying now that Google isn’t really Google anymore",
+            "link": "https://techcrunch.com/2026/05/21/six-search-engines-worth-trying-now-that-google-isnt-really-google-anymore/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Trump delays AI security executive order, saying language ‘could have been a blocker’",
+            "link": "https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Spotify adds AI-powered Q&A and briefing generation features to podcasts",
+            "link": "https://techcrunch.com/2026/05/21/spotify-adds-ai-powered-qa-and-briefing-generation-features-to-podcasts/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Spotify takes on Google’s NotebookLM with its new app",
+            "link": "https://techcrunch.com/2026/05/21/spotify-debuts-a-new-desktop-app-for-creating-personal-podcasts/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Spotify launches an ElevenLabs-powered audiobook creation tool",
+            "link": "https://techcrunch.com/2026/05/21/spotify-launches-an-elevenlabs-powered-audiobook-creation-tool/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "The Path, founded by Tony Robbins and Calm alums, hopes to offer safer AI therapy",
+            "link": "https://techcrunch.com/2026/05/21/the-path-founded-by-tony-robbins-and-calm-alums-wants-to-offer-safer-ai-therapy/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Hark raises $700M Series A for its secretive ‘universal’ AI interface",
+            "link": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
+            "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "With aluminum prices up 20%, recycling startups bet on AI to cash in",
+            "link": "https://techcrunch.com/2026/05/21/with-aluminum-prices-up-20-recycling-startups-bet-on-ai-to-cash-in/",
+            "source": "TechCrunch AI"
+          },
+          {
+            "title": "Microsoft is letting Office users remove an annoying Copilot button",
+            "link": "https://www.theverge.com/news/935967/microsoft-copilot-floating-button-office-excel-apps-removal",
+            "source": "The Verge"
+          },
+          {
+            "title": "Anker’s new earbuds are the first with its AI chip that boosts noise reduction",
+            "link": "https://www.theverge.com/tech/934621/anker-liberty-5-pro-max-wireless-headphones-earbuds-ai-thus-chip",
+            "source": "The Verge"
+          },
+          {
+            "title": "Anker’s new earbuds have the best call quality I’ve ever heard",
+            "link": "https://www.theverge.com/tech/935766/soundcore-liberty-5-pro-series-earbuds-review",
+            "source": "The Verge"
+          },
+          {
+            "title": "States ask judge to break up Live Nation-Ticketmaster",
+            "link": "https://www.theverge.com/policy/935735/live-nation-ticketmaster-states-remedies-request-break-up",
+            "source": "The Verge"
+          },
+          {
+            "title": "All of the updates from Elon Musk and Sam Altman’s battle over OpenAI",
+            "link": "https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit",
+            "source": "The Verge"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "AI 日报",
     "date": "2026年05月22日 2026-05-22 18:35",
     "sections": [
